@@ -1,0 +1,53 @@
+Rol: SysAdmin
+Opciones:
+* Gestionar empleados:
+	- Agregar_empleado: INSERT
+	- Consultar_empleado: SELECT
+	- Modificar_empleado: UPDATE
+	- Eliminar_cargos: DELETE
+* Gestionar Cargos:
+	- Agregar_cargo: INSERT
+	- Consultar_cargo: SELECT
+	- Modificar_cargo: UPDATE
+	- Eliminar_cargo: DELETE
+*Gestionar Roles:
+	- Agregar_roles: INSERT
+	- Consultar_roles: SELECT
+	- Modificar_roles: UPDATE
+	- Eliminar_roles: DELETE
+
+Rol: Vendedor
+Opciones:
+* Gestionar productos:
+	- Consultar: SELECT
+	- Modificar: UPDATE
+
+Rol: RRHH
+Opciones:
+* Gestionar empleados:
+	- Agregar: INSERT
+	- Consultar: SELECT
+	- Modificar: UPDATE
+	- Modificar_cargos: UPDATE
+	- Gestionar_cargos: INSERT
+	- Eliminar_cargos: DELETE
+	
+
+Rol: Atencion al cliente
+Opciones
+* Verificar productos:
+	-Consultar: SELECT
+* Gestionar_clientes:
+	-Modificar_cliente: UPDATE
+
+Rol: Bodeguero
+Opciones:
+* Verificar productos:
+	- Consultar: SELECT
+	- Agregar: INSERT
+	- Eliminar: DELETE
+
+Rol: Motorista
+Opciones
+* Verificar productos
+	- Consultar: SELECT
