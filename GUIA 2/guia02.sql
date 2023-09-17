@@ -51,3 +51,27 @@ INSERT INTO DetallesFactura(FacturaId, ProductoID,Cantidad,PrecioUnitario,Total)
 (10,3,3,8.00,24.00),
 (11,4,3,5.00,15.00),
 (12,5,3,10.00,30.00);
+
+--consulta para listar los clientes que han comprado y vendedor--
+select c.Nombres, c.Apellidos, c.Email,c.FechaNac from clientes c 
+inner join Factura r on r.ClienteID = c.ClienteID;
+
+--consulta para conocer los cargos de los empleados--
+select Nombres,
+(select avg(ProductoID) from Productos where ProductoID = r.ProductoID) as Id_cargo
+from Empleados h inner join Productos r on r.ProductoID = h.EmpleadoId;
+
+-- consulta para conocer la descripcion y el ID de los productos desde el detalleFactura
+select Descripcion,FacturaId FROM Productos
+INNER JOIN DetallesFactura ON Productos.ProductoID = DetallesFactura.FacturaId;
+
+-- consulta para conocer los productos y el cliente a quein se le vendio
+SELECT *
+FROM Productos
+     INNER JOIN Factura 
+ON Productos.ProductoID = Factura.FacturaId
+
+-- consulta para conocer los clientes, cantidad de producto y el total
+SELECT c.Nombres, p.Descripcion, d.Cantidad, d.Total FROM Clientes c 
+INNER JOIN Productos p ON c.ClienteID = p.ProductoID
+INNER JOIN DetallesFactura d ON p.ProductoID = d.DetalleID;
