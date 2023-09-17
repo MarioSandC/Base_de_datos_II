@@ -71,6 +71,33 @@ FROM Productos
      INNER JOIN Factura 
 ON Productos.ProductoID = Factura.FacturaId
 
+
+--Consulta para encontrar los productos con cierto precio
+select Nombre, Descripcion
+from Productos
+where Precio > 4;
+
+--Consulta para calcular el precio a pagar
+SELECT SUM(Total) AS Total_a_pagar
+FROM DetallesFactura
+WHERE Total > 10;
+
+--Consulta para encontrar empleados que tienen numero de DUI
+select Nombres, Apellidos, DUI
+from empleados
+where DUI LIKE '%%[0-9]%%';
+
+select * from Clientes
+
+--Consulta para listar los cliente con cierta restriccion
+select Nombres, Email, Direccion
+from Clientes
+where Telefono LIKE '%%[0-4]%%';
+
+--Consulta para el precio por todos los productos
+select AVG(Precio) as precio_promedio
+from Productos;
+
 -- consulta para conocer los clientes, cantidad de producto y el total
 SELECT c.Nombres, p.Descripcion, d.Cantidad, d.Total FROM Clientes c 
 INNER JOIN Productos p ON c.ClienteID = p.ProductoID
